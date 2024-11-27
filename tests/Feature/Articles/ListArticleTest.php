@@ -37,7 +37,7 @@ class ListArticleTest extends TestCase
     public function can_fecth_all_articles(): void
     {
         $articles = Article::factory(3)->create();
-        $response = $this->getJson(route('articles.index'));
+        $response = $this->getJson(route('articles.index', ['sort' => 'created_at']));
 
         $response->assertExactJson([
             'data' => [

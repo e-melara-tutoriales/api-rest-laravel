@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="SortArticleTest.in_cat_sort_articles_by_title_test" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+    <CommandLine>
+      <PhpTestInterpreterSettings>
+        <option name="interpreterName" value="Ubuntu" />
+      </PhpTestInterpreterSettings>
+    </CommandLine>
+    <TestRunner class="Tests\Feature\Articles\SortArticleTest" configuration_file="/home/emelara/tutoriales/laravel/api-rest/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Articles/SortArticleTest.php" method="in_cat_sort_articles_by_title_test" scope="Method" />
+    <method v="2" />
+  </configuration>
+</component>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Str;
 
 use App\Models\Article;
 use App\Http\Resources\ArticleResource;
@@ -18,6 +19,22 @@ class ArticleController extends Controller
 
     public function index()
     {
-        return new ArticleCollection(Article::all());
+//        $direction = 'asc';
+//        $sortFields = Str::of(request('sort'))->explode(',');
+//
+//        $query = Article::query();
+//
+//        foreach ($sortFields as $sortField) {
+//            $direction = 'asc';
+//            if(Str::of($sortField)->startsWith('-')) {
+//                $direction = 'desc';
+//                $sortField = Str::of($sortField)->substr(1);
+//            }
+//            $query->orderBy($sortField, $direction);
+//        }
+
+        Article::scopeApplySorts(request('sort'));
+
+        return new ArticleCollection($query->get());
     }
 }
